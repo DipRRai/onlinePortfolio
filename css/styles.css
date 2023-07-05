@@ -8,3 +8,10 @@ header{
     margin: 10%;
     text-align: left;
 }
+.headerText{
+    font-family: 'Open Sans', sans-serif;
+    background-image: url("./assets/headerImg.jpg");
+}
+.headerImg{
+    width: 400px;
+}

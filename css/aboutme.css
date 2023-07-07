@@ -57,5 +57,17 @@ nav{
 }
 .aboutMeBlock{
     margin: 5%;
+    font-size: larger   ;
+}
+.intPara{
+    display: flex;
+}
+.intPara1{
+    width: 70%;
+    margin-right: 10%;
+}
+.intPara2{
+    height: auto;
+    width: auto;
 }
 

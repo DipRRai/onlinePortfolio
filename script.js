@@ -1,60 +1,49 @@
-// import * as THREE from 'three';
-// import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
-// import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js';
-// import { GLTFLoader } from './js/libs/GLTFLoader.js';
-// import { TextureLoader } from './js/libs/TextureLoader.js';
-import * as THREE from './node_modules/three/build/three.module.js';
-// import { FontLoader } from './node_modules/three/examples/jsm/loaders/FontLoader.js';
-// import { TextGeometry } from './node_modules/three/examples/jsm/geometries/TextGeometry.js';
-// import { GLTFLoader } from './node_modules/three/examples/jsm/loaders/GLTFLoader.js';
-// import { TextureLoader } from './node_modules/three/src/loaders/TextureLoader.js';
+import * as THREE from 'three';
+import { FontLoader } from 'three/addons/loaders/FontLoader.js';
+import { TextGeometry } from 'three/addons/geometries/TextGeometry.js';
+import { TextureLoader } from 'three/src/loaders/TextureLoader.js';
 
 const element = document.getElementById('displayer');
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer();
+const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(element.clientWidth, element.clientHeight);
 
 renderer.setAnimationLoop(animate);
+camera.position.x = -13;
+camera.position.y = 5;
 camera.position.z = 30;
 
-element.appendChild(renderer.domElement);
-// const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-// const loader = new FontLoader();
-// let text;
-// const textureLoader = new TextureLoader();
-// const texture = textureLoader.load('./assets/Splotch.jpg', () => {
-//     // Texture loaded, create the material with the texture
-//     const material = new THREE.MeshBasicMaterial({ map: texture });
 
-//     // Load the font and create the text geometry
-//     loader.load('./node_modules/three/examples/fonts/helvetiker_regular.typeface.json', function (font) {
-//         const textGeometry = new TextGeometry("Welcome to Dip's portfolio", {
-//             font: font,
-//             size: 5,
-//             height: 0.1,
-//             curveSegments: 12,
-//             bevelEnabled: true,
-//             bevelThickness: 0.1,
-//             bevelSize: 0.5,
-//             bevelOffset: 0,
-//             bevelSegments: 5
-//         });
-//         // Center the geometry
-//         textGeometry.computeBoundingBox();
-//         const centerOffset = -0.5 * (textGeometry.boundingBox.max.x - textGeometry.boundingBox.min.x);
-//         textGeometry.translate(centerOffset, 0, 0);
-//         text = new THREE.Mesh(textGeometry, material);
-//         text.position.x = 0;
-//         text.position.y = 0;
-//         text.position.z = 0;
-//         scene.add(text);
-//     });
-// });
+element.appendChild(renderer.domElement);
+
+// Create cube geometry
+const geometry = new THREE.TorusGeometry( 10, 3, 16, 100 );
+const material = new THREE.MeshBasicMaterial({ color: 'black' });
+
+const cube = new THREE.Mesh(geometry, material);
+const loop = new THREE.Mesh(geometry, material);
+scene.add(cube);
+scene.add(loop)
+
+// Create wireframe geometry based on cube geometry
+const wireframeGeometry = new THREE.WireframeGeometry(geometry);
+const wire_mat_white = new THREE.LineBasicMaterial({ color: 'white'});
+const wire_mat_pink = new THREE.LineBasicMaterial({ color: 'white'});
+const wireframe_white = new THREE.LineSegments(wireframeGeometry, wire_mat_white);
+const wireframe_pink = new THREE.LineSegments(wireframeGeometry, wire_mat_pink);
+
+// Add wireframe as a child of the cube
+cube.add(wireframe_white);
+loop.add(wireframe_pink);
+loop.position.x = 10;
+loop.rotation.x = Math.PI/2
 
 function animate() {
-    // if (text) {
-    //     text.rotation.y += 0.01;  // Rotate the text
-    // }
+    renderer.setSize(element.clientWidth, element.clientHeight);
+    cube.rotation.x += 0.001;
+    //cube.rotation.y += 0.001;
+    loop.rotation.x += 0.001;
+    //loop.rotation.y += 0.001;
     renderer.render(scene, camera);
 }

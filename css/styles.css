@@ -6,7 +6,7 @@ body {
 #displayer {
     top: 0;
     left: 0;
-    height: 400px;
+    height: 100vh;
     width: 100vw;
 }
 
@@ -33,16 +33,23 @@ header {
     text-align: left;
 }
 
-.headerText {
+.container {
+    position: relative;
     width: 100vw;
-    height: 400px;
+    height: 100vh;
+}
+
+.headerText {
+    width: 100%;
     font-family: 'Open Sans', sans-serif;
     font-size: 25px;
     color: white;
-    background-color: #393E46;
     text-align: left;
-    position: relative; /* Positioning relative to parent */
-    z-index: 1; /* Ensure it is above the canvas */
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    /* transform: translate(-20px, -50%); */
+    z-index: 1;
 }
 
 .headerText h2 {
@@ -71,18 +78,14 @@ nav {
     flex-grow: 2;
 }
 
-.lowerBody {
-    padding-top: 5%;
-    padding-bottom: 5%;
-    padding-left: 10%;
-}
-
 .showcase {
     font-family: 'Open Sans', sans-serif;
-    background-color: #00ADB5;
+    color: white;
     text-align: left;
-    padding: 5%;
-    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    z-index: 1;
 }
 
 .showcase ul {

@@ -1,4 +1,4 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.117.1/build/three.module.js';
+import * as THREE from 'https://unpkg.com/three@0.97.0/build/three.module.js';
 
 const element = document.getElementById('displayer');
 const scene = new THREE.Scene();

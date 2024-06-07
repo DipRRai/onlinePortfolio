@@ -10,5 +10,19 @@
   "dependencies": {
     "gh-pages": "^6.1.1",
     "three": "^0.165.0"
-  }
+  },
+  "name": "portfolio",
+  "description": "An online portfolio for me to show off what i have been working on",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DipRRai/onlinePortfolio.git"
+  },
+  "author": "Dippy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DipRRai/onlinePortfolio/issues"
+  },
+  "homepage": "https://github.com/DipRRai/onlinePortfolio#readme"
 }

@@ -1,8 +1,8 @@
-import * as THREE from './node_modules/three/build/three.module.js';
-import { FontLoader } from './node_modules/three/examples/jsm/loaders/FontLoader.js';
-import { TextGeometry } from './node_modules/three/examples/jsm/geometries/TextGeometry.js';
-import { GLTFLoader } from './node_modules/three/examples/jsm/loaders/GLTFLoader.js';
-import { TextureLoader } from './node_modules/three/src/loaders/TextureLoader.js';
+import * as THREE from '/node_modules/three/build/three.module.js';
+import { FontLoader } from '/node_modules/three/examples/jsm/loaders/FontLoader.js';
+import { TextGeometry } from '/node_modules/three/examples/jsm/geometries/TextGeometry.js';
+import { GLTFLoader } from '/node_modules/three/examples/jsm/loaders/GLTFLoader.js';
+import { TextureLoader } from '/node_modules/three/src/loaders/TextureLoader.js';
 
 const element = document.getElementById('displayer');
 const scene = new THREE.Scene();

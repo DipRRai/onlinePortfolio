@@ -1,5 +1,5 @@
 body{
-    background-color: #EEEEEE;
+    background-color: black;
     margin: 0;
 }
 .headerListItem a{
@@ -15,6 +15,7 @@ header{
 .projects{
     margin: 5%;
     text-align: left;
+    color: white;
 }
 .headerText{
     width: 100%;
@@ -36,7 +37,7 @@ header{
 nav{
     padding: 30px;
     width: 100%;
-    background-color: #222831;
+    background-color: black;
 }
 
 .nav_links{

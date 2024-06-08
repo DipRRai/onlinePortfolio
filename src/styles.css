@@ -4,6 +4,7 @@ body {
 }
 
 #displayer {
+    position: absolute; /* Ensure the canvas positions within the header */
     top: 0;
     left: 0;
     height: 100vh;
@@ -21,7 +22,7 @@ h1 {
 
 header {
     text-align: center;
-    position: relative; /* Ensure the canvas positions within the header */
+    position: relative;
 }
 
 .jointText {
@@ -42,14 +43,17 @@ header {
 .headerText {
     width: 100%;
     font-family: 'Open Sans', sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     color: white;
     text-align: left;
     position: absolute;
     top: 10%;
     left: 3%;
-    /* transform: translate(-20px, -50%); */
     z-index: 1;
+}
+
+.header-title {
+    margin-bottom: 30px;
 }
 
 .headerText h2 {
@@ -59,7 +63,7 @@ header {
 nav {
     padding: 30px;
     width: 100%;
-    background-color: #222831;
+    background-color: black;
 }
 
 .nav_links {
@@ -90,4 +94,22 @@ nav {
 
 .showcase ul {
     list-style: none;
+    
+}
+
+.showcase h1 {
+    font-size: 50px;
+}
+
+.showcase li {
+    font-size: 20px;
+}
+
+.threejs-note {
+    position: absolute;
+    bottom: 10px;
+    left: 80%;
+    color: white;
+    z-index: 2;
+    font-family: sans-serif;
 }

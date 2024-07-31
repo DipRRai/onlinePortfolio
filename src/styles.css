@@ -53,12 +53,18 @@ header {
 }
 
 .header-title {
-    font-size: 90px;
+    font-size: 10vh;
     margin-bottom: 30px;
 }
 
-.headerText h2 {
-    font-size: 30px;
+.joint-text{
+    font-size: 4vh;
+}
+.joint-redirect{
+    font-size: 7vh;
+}
+.joint-redirect a {
+    font-size: inherit;
 }
 
 nav {
@@ -99,7 +105,12 @@ nav {
     
 }
 
-.showcase h1 {
+.showcase > h2, .showcase > h3  {
+    margin: 0;
+}
+
+
+.showcase > h1:nth-child(8) {
     font-size: 50px;
 }
 
@@ -160,4 +171,16 @@ hr {
     100% {
         color: red; /* Loops back to red */
     }
+}
+
+.footerBlock{
+    color: white;
+}
+
+.footerBlock h3{
+    margin: 0;
+}
+
+.footerBlock > h3:nth-child(1){
+    margin: 10px;
 }

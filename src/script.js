@@ -1,4 +1,5 @@
 import * as THREE from 'https://unpkg.com/three@0.97.0/build/three.module.js';
+document.getElementById('currentYear').textContent = new Date().getFullYear();
 
 const element = document.getElementById('displayer');
 const scene = new THREE.Scene();
